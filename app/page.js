@@ -143,25 +143,25 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <ul className="space-y-5">
-              <li className="flex gap-3 items-start border-b border-cream/10 pb-4">
+                            <li className="flex gap-3 items-start border-b border-cream/10 pb-4">
                 <span className="text-gold mt-0.5">📞</span>
                 <div>
                   <p className="text-xs uppercase tracking-wide text-gold/80">Phone</p>
-                  <a href="tel:+2348012345678" className="font-semibold hover:underline">+234 801 234 5678</a>
+                  <a href="tel:+2347039652490" className="font-semibold hover:underline">+234 703 965 2490</a>
                 </div>
               </li>
               <li className="flex gap-3 items-start border-b border-cream/10 pb-4">
                 <span className="text-gold mt-0.5">💬</span>
                 <div>
                   <p className="text-xs uppercase tracking-wide text-gold/80">WhatsApp</p>
-                  <a href="https://wa.me/2348012345678" target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline">Chat with us on WhatsApp</a>
+                  <a href="https://wa.me/2347039652490" target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline">Chat with us on WhatsApp</a>
                 </div>
               </li>
               <li className="flex gap-3 items-start border-b border-cream/10 pb-4">
                 <span className="text-gold mt-0.5">✉️</span>
                 <div>
                   <p className="text-xs uppercase tracking-wide text-gold/80">Email</p>
-                  <a href="mailto:orders@farmgate.example" className="font-semibold hover:underline">orders@farmgate.example</a>
+                  <a href="mailto:farmgate26@gmail.com" className="font-semibold hover:underline">farmgate26@gmail.com</a>
                 </div>
               </li>
               <li className="flex gap-3 items-start">
