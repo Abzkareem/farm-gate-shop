@@ -7,32 +7,26 @@ export default function OrderSuccess() {
   const { setCartEmpty } = useCart();
 
   useEffect(() => {
-    // Clear the cart once the customer lands here — their order went through
     if (setCartEmpty) setCartEmpty();
   }, []);
 
   return (
-    <main style={{ maxWidth: "600px", margin: "0 auto", padding: "60px 20px", textAlign: "center" }}>
-      <h1 style={{ color: "#2E3B26" }}>Thank you for your order! 🐓</h1>
-      <p style={{ color: "#555", marginTop: "12px" }}>
-        We've received your payment. We'll reach out shortly on WhatsApp or email
-        to confirm delivery or pickup details.
-      </p>
-      <Link
-        href="/"
-        style={{
-          display: "inline-block",
-          marginTop: "24px",
-          padding: "12px 24px",
-          background: "#A8442C",
-          color: "white",
-          borderRadius: "6px",
-          textDecoration: "none",
-          fontWeight: "bold",
-        }}
-      >
-        Back to shop
-      </Link>
+    <main className="min-h-screen bg-cream flex items-center justify-center px-6 py-16">
+      <div className="max-w-md w-full text-center bg-card border border-soil/25 rounded-xl p-10">
+        <div className="w-16 h-16 rounded-full bg-forest text-cream flex items-center justify-center mx-auto mb-6">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
+        </div>
+        <h1 className="font-display font-bold text-2xl md:text-3xl text-forest mb-3">Thank you for your order!</h1>
+        <p className="text-ink/70 mb-8">
+          We've received your payment. We'll reach out shortly on WhatsApp or email to confirm delivery or pickup details.
+        </p>
+        <Link
+          href="/"
+          className="inline-block bg-barn-red hover:bg-barn-red-dark text-cream font-bold px-8 py-4 rounded-md transition"
+        >
+          Back to shop
+        </Link>
+      </div>
     </main>
   );
 }
