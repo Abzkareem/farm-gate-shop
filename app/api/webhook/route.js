@@ -28,7 +28,7 @@ export async function POST(req) {
     try {
       const result = await resend.emails.send({
         from: "Farm Gate Orders <onboarding@resend.dev>",
-        to: "farmgate26@gmail.com",
+        to: "kareem4real99@gmail.com",
         subject: `New order — ₦${(amount / 100).toLocaleString()}`,
         text: `New confirmed payment!\n\nReference: ${reference}\nAmount: ₦${(amount / 100).toLocaleString()}\nCustomer email: ${customer.email}\n\nReach out to confirm delivery/pickup details.`,
       });
