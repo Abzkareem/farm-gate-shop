@@ -26,14 +26,15 @@ export async function POST(req) {
     });
 
     try {
-      await resend.emails.send({
+      const result = await resend.emails.send({
         from: "Farm Gate Orders <onboarding@resend.dev>",
         to: "farmgate26@gmail.com",
         subject: `New order — ₦${(amount / 100).toLocaleString()}`,
         text: `New confirmed payment!\n\nReference: ${reference}\nAmount: ₦${(amount / 100).toLocaleString()}\nCustomer email: ${customer.email}\n\nReach out to confirm delivery/pickup details.`,
       });
+      console.log("Resend result:", JSON.stringify(result));
     } catch (err) {
-      console.log("Email send failed:", err);
+      console.log("Email send failed:", JSON.stringify(err));
     }
   }
 
