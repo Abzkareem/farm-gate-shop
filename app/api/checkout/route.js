@@ -12,10 +12,11 @@ export async function POST(req) {
     body: JSON.stringify({
       email,
       amount: totalAmount * 100,
-      callback_url: "http://localhost:3000/order-success",
+      callback_url: "https://farm-gate-shop-pi.vercel.app/order-success",
     }),
   });
 
   const data = await response.json();
+  console.log("Paystack response:", JSON.stringify(data));
   return Response.json(data);
 }
