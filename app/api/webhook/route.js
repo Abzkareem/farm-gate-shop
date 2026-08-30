@@ -17,20 +17,28 @@ export async function POST(req) {
   const event = JSON.parse(body);
 
   if (event.event === "charge.success") {
-    const { reference, amount, customer } = event.data;
+    const { reference, amount, customer, metadata } = event.data;
 
-    console.log("✅ Payment confirmed:", {
-      reference,
+    const name = metadata && metadata.name ? metadata.name : "Not provided";
+    const phone = metadata && metadata.phone ? metadata.phone : "Not provided";
+    const address = metadata && metadata.address ? metadata.address : "Not provided";
+    const deliveryMethod = metadata && metadata.deliveryMethod ? metadata.deliveryMethod : "Not provided";
+    const cartItems = metadata && metadata.cart_items ? metadata.cart_items : "Not provided";
+
+    console.log("Payment confirmed:", {
+      reference: reference,
       amountPaid: amount / 100,
       email: customer.email,
+      name: name,
+      phone: phone,
     });
 
     try {
       const result = await resend.emails.send({
         from: "Farm Gate Orders <onboarding@resend.dev>",
         to: "kareem4real99@gmail.com",
-        subject: `New order — ₦${(amount / 100).toLocaleString()}`,
-        text: `New confirmed payment!\n\nReference: ${reference}\nAmount: ₦${(amount / 100).toLocaleString()}\nCustomer email: ${customer.email}\n\nReach out to confirm delivery/pickup details.`,
+        subject: "New order - " + (amount / 100).toLocaleString(),
+        text: "New confirmed payment.\n\nReference: " + reference + "\nAmount: " + (amount / 100).toLocaleString() + "\nCustomer email: " + customer.email + "\nName: " + name + "\nPhone: " + phone + "\nDelivery method: " + deliveryMethod + "\nAddress: " + address + "\nItems: " + cartItems,
       });
       console.log("Resend result:", JSON.stringify(result));
     } catch (err) {
@@ -43,9 +51,15 @@ export async function POST(req) {
         redirect: "follow",
         headers: { "Content-Type": "text/plain" },
         body: JSON.stringify({
-          reference,
+          reference: reference,
           amount: amount / 100,
           email: customer.email,
+          name: name,
+          phone: phone,
+          address: address,
+          deliveryMethod: deliveryMethod,
+          items: cartItems,
+          status: "Order received",
         }),
       });
       const sheetText = await sheetResponse.text();
