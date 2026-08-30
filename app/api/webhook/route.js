@@ -25,6 +25,7 @@ export async function POST(req) {
       email: customer.email,
     });
 
+    // Send email notification
     try {
       const result = await resend.emails.send({
         from: "Farm Gate Orders <onboarding@resend.dev>",
@@ -35,6 +36,22 @@ export async function POST(req) {
       console.log("Resend result:", JSON.stringify(result));
     } catch (err) {
       console.log("Email send failed:", JSON.stringify(err));
+    }
+
+    // Log order to Google Sheet
+    try {
+      const sheetResponse = await fetch(process.env.GOOGLE_SHEET_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          reference,
+          amount: amount / 100,
+          email: customer.email,
+        }),
+      });
+      console.log("Sheet log status:", sheetResponse.status);
+    } catch (err) {
+      console.log("Sheet log failed:", JSON.stringify(err));
     }
   }
 
