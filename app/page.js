@@ -10,11 +10,10 @@ export default function Home() {
   return (
     <>
       {/* ===================== HEADER ===================== */}
-      <header className="sticky top-0 z-50 bg-cream/95 backdrop-blur border-b border-soil/20">
-        <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
-          <a href="#top" className="flex items-center gap-2 font-display font-bold text-2xl text-forest">
-            <svg width="26" height="26" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 21V6l4-3v18M17 21V6l4-3v18M3 10h18M3 15h18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/><path d="M7 3v18M17 3v18" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round"/></svg>
-            Farm Gate
+            <header className="sticky top-0 z-50 bg-cream/95 backdrop-blur border-b border-soil/20">
+        <div className="max-w-6xl mx-auto flex items-center justify-between px-6 h-20">
+                   <a href="#top" className="flex items-center">
+            <img src="/logo-full.png" alt="Farm Gate" className="h-20 w-auto" />
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm font-semibold text-forest">
             <a href="#available-now" className="hover:text-barn-red transition">Available Now</a>
@@ -143,27 +142,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
             <ul className="space-y-5">
-                            <li className="flex gap-3 items-start border-b border-cream/10 pb-4">
-                <span className="text-gold mt-0.5">📞</span>
-                <div>
-                  <p className="text-xs uppercase tracking-wide text-gold/80">Phone</p>
-                  <a href="tel:+2347039652490" className="font-semibold hover:underline">+234 703 965 2490</a>
-                </div>
-              </li>
-              <li className="flex gap-3 items-start border-b border-cream/10 pb-4">
-                <span className="text-gold mt-0.5">💬</span>
-                <div>
-                  <p className="text-xs uppercase tracking-wide text-gold/80">WhatsApp</p>
-                  <a href="https://wa.me/2347039652490" target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline">Chat with us on WhatsApp</a>
-                </div>
-              </li>
-              <li className="flex gap-3 items-start border-b border-cream/10 pb-4">
-                <span className="text-gold mt-0.5">✉️</span>
-                <div>
-                  <p className="text-xs uppercase tracking-wide text-gold/80">Email</p>
-                  <a href="mailto:farmgate26@gmail.com" className="font-semibold hover:underline">farmgate26@gmail.com</a>
-                </div>
-              </li>
+              
               <li className="flex gap-3 items-start">
                 <span className="text-gold mt-0.5">📍</span>
                 <div>
