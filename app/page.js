@@ -1,11 +1,19 @@
 "use client";
-import { products } from "../data/products";
 import { useCart } from "../context/CartContext";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 export default function Home() {
   const { cart, addToCart } = useCart();
   const cartCount = cart.reduce((sum, item) => sum + item.qty, 0);
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    fetch("/api/products")
+      .then(function(res) { return res.json(); })
+      .then(function(data) { setProducts(data); })
+      .catch(function(err) { console.log("Failed to load products:", err); });
+  }, []);
 
   return (
     <>
