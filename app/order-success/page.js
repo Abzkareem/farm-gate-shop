@@ -1,10 +1,10 @@
 "use client";
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { useCart } from "../../context/CartContext";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 
-export default function OrderSuccess() {
+function OrderSuccessContent() {
   const { setCartEmpty } = useCart();
   const searchParams = useSearchParams();
   const [reference, setReference] = useState("");
@@ -43,5 +43,13 @@ export default function OrderSuccess() {
         </Link>
       </div>
     </main>
+  );
+}
+
+export default function OrderSuccess() {
+  return (
+    <Suspense fallback={<div className="min-h-screen bg-cream"></div>}>
+      <OrderSuccessContent />
+    </Suspense>
   );
 }
