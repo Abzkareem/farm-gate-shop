@@ -34,4 +34,14 @@ export default function OrderSuccess() {
           </div>
         ) : null}
 
-        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="block w-full bg-forest hover:bg-forest-dark text-cream font-bold
+        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="block w-full bg-forest text-cream font-bold px-8 py-4 rounded-md mb-3">
+          Confirm on WhatsApp
+        </a>
+
+        <Link href="/" className="inline-block bg-barn-red text-cream font-bold px-8 py-4 rounded-md">
+          Back to shop
+        </Link>
+      </div>
+    </main>
+  );
+}
