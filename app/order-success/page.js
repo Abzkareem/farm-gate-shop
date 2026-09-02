@@ -37,14 +37,7 @@ export default function OrderSuccess() {
         )}
 
         
-          href={whatsappLink}
-          target="_blank"
-          rel="noopener noreferrer"
-          className="block w-full bg-forest hover:bg-forest-dark text-cream font-bold px-8 py-4 rounded-md transition mb-3"
-        >
-          Confirm on WhatsApp
-        </a>
-
+                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="block w-full bg-forest hover:bg-forest-dark text-cream font-bold px-8 py-4 rounded-md transition mb-3">Confirm on WhatsApp</a>
         <Link
           href="/"
           className="inline-block bg-barn-red hover:bg-barn-red-dark text-cream font-bold px-8 py-4 rounded-md transition"
