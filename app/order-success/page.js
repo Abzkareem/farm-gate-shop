@@ -25,26 +25,13 @@ export default function OrderSuccess() {
           <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"/></svg>
         </div>
         <h1 className="font-display font-bold text-2xl md:text-3xl text-forest mb-3">Thank you for your order!</h1>
-        <p className="text-ink/70 mb-6">
-          We've received your payment. For the fastest confirmation, message us on WhatsApp with your order reference below.
-        </p>
+        <p className="text-ink/70 mb-6">We have received your payment. For the fastest confirmation, message us on WhatsApp with your order reference below.</p>
 
-        {reference && (
+        {reference ? (
           <div className="bg-cream border border-soil/25 rounded-md px-4 py-3 mb-6">
             <p className="text-xs uppercase tracking-wide text-soil">Order Reference</p>
             <p className="font-display font-bold text-forest">{reference}</p>
           </div>
-        )}
+        ) : null}
 
-        
-                 <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="block w-full bg-forest hover:bg-forest-dark text-cream font-bold px-8 py-4 rounded-md transition mb-3">Confirm on WhatsApp</a>
-        <Link
-          href="/"
-          className="inline-block bg-barn-red hover:bg-barn-red-dark text-cream font-bold px-8 py-4 rounded-md transition"
-        >
-          Back to shop
-        </Link>
-      </div>
-    </main>
-  );
-}
+        <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="block w-full bg-forest hover:bg-forest-dark text-cream font-bold
