@@ -92,4 +92,116 @@ export default function Home() {
       <section id="coming-soon" className="bg-soil-dark text-cream py-20 px-6">
         <div className="max-w-6xl mx-auto">
           <div className="text-center max-w-xl mx-auto mb-12">
-            <p
+            <p className="uppercase tracking-widest text-gold text-sm font-bold mb-2">Expanding The Farm</p>
+            <h2 className="font-display font-bold text-3xl md:text-4xl mb-2">Coming soon</h2>
+            <p className="text-cream-soft/80">We're growing beyond poultry. Check back here for updates.</p>
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
+            {[
+              { name: "Goats", image: "/images/goats.jpg" },
+              { name: "Cows", image: "/images/cows.jpg" },
+              { name: "Rams", image: "/images/rams.jpg" },
+            ].map((animal) => (
+              <div key={animal.name} className="relative bg-cream/5 border border-dashed border-gold/50 rounded-xl overflow-hidden text-center">
+                <span className="absolute top-3 -right-9 bg-gold text-forest-dark text-xs font-bold uppercase tracking-wide px-10 py-1 rotate-45 shadow-md z-10">Coming Soon</span>
+                <div className="relative h-40">
+                  <img src={animal.image} alt={animal.name} className="w-full h-full object-cover grayscale opacity-70" />
+                  <div className="absolute inset-0 bg-soil-dark/40"></div>
+                </div>
+                <div className="p-6">
+                  <h3 className="font-display font-bold text-xl mb-2">{animal.name}</h3>
+                  <p className="text-sm text-cream-soft/70">Timeline to be announced - check back soon.</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="why-us" className="bg-cream py-20 px-6">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center max-w-xl mx-auto mb-12">
+            <p className="uppercase tracking-widest text-barn-red text-sm font-bold mb-2">Why Choose Us</p>
+            <h2 className="font-display font-bold text-3xl md:text-4xl text-forest">A farm that earns your trust</h2>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {[
+              { title: "Raised with care, not shortcuts", desc: "Healthy, well-fed stock from day one - no rushed or overcrowded conditions.", icon: "M12 21c-4.5-3-8-6.5-8-11a5 5 0 0 1 8-4 5 5 0 0 1 8 4c0 4.5-3.5 8-8 11z" },
+              { title: "Fresh when you need it", desc: "Reliable stock availability and a quick turnaround on every order.", icon: "M13 3L4 14h6l-1 7 9-11h-6l1-7z" },
+              { title: "A farm you can visit, not just order from", desc: "Transparency about how your animals are raised builds trust that big suppliers can't match.", icon: "M3 21V6l4-3v18M17 21V6l4-3v18M3 10h18M3 15h18" },
+            ].map((item) => (
+              <div key={item.title} className="text-left">
+                <div className="w-12 h-12 rounded-full bg-forest text-cream flex items-center justify-center mb-4">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d={item.icon} stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/></svg>
+                </div>
+                <h3 className="font-display font-bold text-lg text-forest mb-2">{item.title}</h3>
+                <p className="text-sm text-ink/70">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" className="bg-forest-dark text-cream py-20 px-6">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center max-w-xl mx-auto mb-12">
+            <p className="uppercase tracking-widest text-gold text-sm font-bold mb-2">Get In Touch</p>
+            <h2 className="font-display font-bold text-3xl md:text-4xl mb-2">Contact us to order</h2>
+            <p className="text-cream-soft/80">Reach out on WhatsApp for the fastest reply.</p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+            <ul className="space-y-5">
+              <li className="flex gap-3 items-start border-b border-cream/10 pb-4">
+                <span className="text-gold mt-0.5">Phone</span>
+                <div>
+                  <p className="text-xs uppercase tracking-wide text-gold/80">Phone</p>
+                  <a href="tel:+2347039652490" className="font-semibold hover:underline">+234 703 965 2490</a>
+                </div>
+              </li>
+              <li className="flex gap-3 items-start border-b border-cream/10 pb-4">
+                <span className="text-gold mt-0.5">WhatsApp</span>
+                <div>
+                  <p className="text-xs uppercase tracking-wide text-gold/80">WhatsApp</p>
+                  <a href="https://wa.me/2347039652490" target="_blank" rel="noopener noreferrer" className="font-semibold hover:underline">Chat with us on WhatsApp</a>
+                </div>
+              </li>
+              <li className="flex gap-3 items-start border-b border-cream/10 pb-4">
+                <span className="text-gold mt-0.5">Email</span>
+                <div>
+                  <p className="text-xs uppercase tracking-wide text-gold/80">Email</p>
+                  <a href="mailto:farmgate26@gmail.com" className="font-semibold hover:underline">farmgate26@gmail.com</a>
+                </div>
+              </li>
+              <li className="flex gap-3 items-start">
+                <span className="text-gold mt-0.5">Location</span>
+                <div>
+                  <p className="text-xs uppercase tracking-wide text-gold/80">Location and Delivery</p>
+                  <p className="font-semibold">Abuja, Nigeria - pickup at the farm, delivery available within Abuja</p>
+                </div>
+              </li>
+            </ul>
+
+            <div className="bg-cream/5 border border-cream/15 rounded-xl p-6 h-fit">
+              <h3 className="font-display font-bold mb-4">Farm Hours</h3>
+              <div className="flex justify-between text-sm py-2 border-b border-dashed border-cream/15">
+                <span className="text-cream-soft">Monday - Saturday</span>
+                <span className="font-semibold">8:00 AM - 6:00 PM</span>
+              </div>
+              <div className="flex justify-between text-sm py-2">
+                <span className="text-cream-soft">Sunday</span>
+                <span className="font-semibold">10:00 AM - 4:00 PM</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <footer className="bg-[#17200F] text-cream-soft/70 text-center py-6 text-sm">
+        <p><strong className="text-cream">Farm Gate</strong> - Abuja, Nigeria - © {new Date().getFullYear()} Farm Gate. All rights reserved.</p>
+      </footer>
+    </>
+  );
+}
